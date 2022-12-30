@@ -1,7 +1,8 @@
 export default function LoadingSkeletonComplex() {
     return (
         <div
-            className="relative p-4 w-full bg-[#f5f5f5] rounded-lg overflow-hidden rounded-lg">
+            className="relative p-4 w-full bg-[#f5f5f5] rounded-lg overflow-hidden rounded-lg"
+        >
             <div className="animate-pulse flex flex-col">
                 <div className="rounded w-full h-52 bg-gray-200"></div>
                 <div className="flex flex-col mt-5">

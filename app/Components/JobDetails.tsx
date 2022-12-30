@@ -23,7 +23,10 @@ export default function JobDetails({job, index}) {
                         </h1>
 
                         <p className={'mt-2 text-sm lg:text-base text-white'}>
-                            Job Posted by <a href={'#'} className={'underline'}>{job.company}</a>
+                            Job Posted by {' '}
+                            <a href={'#'} className={'underline'}>
+                                {job.company}
+                            </a>
                         </p>
                     </div>
 
@@ -161,11 +164,9 @@ export default function JobDetails({job, index}) {
 
                         <p className={'mt-2 text-sm'}>
                             {job.company} is an independent apparel label that infuses soft androgyny into
-                            every inch of its creation. Designed intimately witih minimal adornment
-                            and
+                            every inch of its creation. Designed intimately witih minimal adornment and
                             muted colours, {job.company} reflects clean silhouttes for perfect essentials
-                            of
-                            capsule wardrobe.
+                            of capsule wardrobe.
                         </p>
                     </div>
                 </div>

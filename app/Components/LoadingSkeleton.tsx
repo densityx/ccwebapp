@@ -1,7 +1,8 @@
 export default function LoadingSkeleton() {
     return (
         <div
-            className="relative p-4 w-full bg-[#f5f5f5] rounded-lg overflow-hidden rounded-lg">
+            className="relative p-4 w-full bg-[#f5f5f5] rounded-lg overflow-hidden rounded-lg"
+        >
             <div className="animate-pulse flex space-x-4">
                 <div className="flex-1 space-y-4 py-1">
                     <div className="h-4 bg-gray-200 rounded w-3/4"></div>

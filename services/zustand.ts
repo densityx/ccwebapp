@@ -13,8 +13,15 @@ export const useAppStore = create((set, get) => ({
     setJobs: (jobs) => set({jobs}),
     setSelectedJob: (selectedJob) => set({selectedJob}),
     setTerm: (term) => set({term}),
-    getJobs: () => orderBy(get().jobs, [get().sort === 'new' ? 'postedAt' : 'top'], [get().sortType])
-        .filter(job => job.name.toLowerCase().includes(get().term.toLowerCase())),
+    getJobs: () => orderBy(
+        get().jobs,
+        [
+            get().sort === 'new'
+                ? 'postedAt'
+                : (get().sort === 'salary' ? 'minSalary' : 'top')
+        ],
+        [get().sortType]
+    ).filter(job => job.name.toLowerCase().includes(get().term.toLowerCase())),
     setShowSort: (showSort) => set({showSort}),
     setSort: (sort) => set({sort}),
     setSortType: (sortType) => set({sortType}),
