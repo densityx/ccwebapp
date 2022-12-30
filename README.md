@@ -25,12 +25,14 @@ npm run dev
 
 To view the project published in production visit the link below
 
-- [Vercel]()
+- [Vercel](https://ccwebapp.vercel.app/)
 
 ## Screenshots Preview
 
 <img src="public/images/1.png">
 <img src="public/images/2.png">
 <img src="public/images/3.png">
-<img src="public/images/4.png">
-<img src="public/images/5.png">
+<div style="display: flex;">
+<img style="width: 48%" src="public/images/4.png">
+<img style="width: 48%" src="public/images/5.png">
+</div>

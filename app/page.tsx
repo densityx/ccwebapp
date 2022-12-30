@@ -54,12 +54,12 @@ export default function Home() {
                                     }}
                                 />
                             )) : (
-                                <>
+                                <div className={'jobs-listing'}>
                                     <LoadingSkeleton/>
                                     <LoadingSkeleton/>
                                     <LoadingSkeleton/>
                                     <LoadingSkeleton/>
-                                </>
+                                </div>
                             )}
                     </div>
                 </div>
