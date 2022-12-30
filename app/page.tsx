@@ -4,7 +4,7 @@ import JobCard from './Components/JobCard'
 import JobDetails from './Components/JobDetails';
 import {collection, getDocs, getFirestore} from "firebase/firestore";
 import {app} from '../services/firebase';
-import {useCallback, useEffect, useState} from "react";
+import {useCallback, useEffect} from "react";
 import LoadingSkeleton from "./Components/LoadingSkeleton";
 import LoadingSkeletonComplex from "./Components/LoadingSkeletonComplex";
 import {useAppStore} from "../services/zustand";

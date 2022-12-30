@@ -1,4 +1,8 @@
-export default function ShareComponents({className = ''}) {
+interface ShareComponentsProps {
+    className?: string;
+}
+
+export default function ShareComponents({className = ''}: ShareComponentsProps) {
     return (
         <div className={`flex space-x-4 ${className || 'mt-4 lg:mt-0'}`}>
             <button

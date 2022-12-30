@@ -2,10 +2,15 @@ import ShareComponents from "./ShareComponents";
 import {format} from "../../services/currency";
 import moment from "moment";
 
-export default function JobDetails({job, index}) {
+interface JobDetailsProps {
+    index: number;
+    job: any;
+}
+
+export default function JobDetails({job, index}: JobDetailsProps) {
     return (
         <div className={'relative bg-[#f5f5f5] overflow-hidden rounded-xl'}>
-            <div className={'flex items-center h-[260px] lg:h-[320px] overflow-hidden'}>
+            <div className={'flex items-center h-[210px] lg:h-[320px] overflow-hidden'}>
                 <img
                     className={'w-full h-auto'}
                     src={`https://picsum.photos/id/${index}/1000/600`}
@@ -14,7 +19,7 @@ export default function JobDetails({job, index}) {
             </div>
 
             <div
-                className={'flex flex-col justify-between absolute top-0 left-0 p-6 lg:p-8 z-10 bg-gray-800/40 w-full h-[260px] lg:h-[320px]'}
+                className={'flex flex-col justify-between absolute top-0 left-0 p-6 lg:p-8 z-10 bg-gray-800/40 w-full h-[210px] lg:h-[320px]'}
             >
                 <div className={'flex justify-between'}>
                     <div>
