@@ -1,0 +1,1 @@
+export const format = (amount: number) => new Intl.NumberFormat('en-MY', {maximumSignificantDigits: 3}).format(amount);

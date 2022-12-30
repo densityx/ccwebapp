@@ -2,13 +2,13 @@ export default function ShareComponents({className = ''}) {
     return (
         <div className={`flex space-x-4 ${className || 'mt-4 lg:mt-0'}`}>
             <button
-                className={'flex flex-row items-center justify-center w-full lg:w-auto px-8 py-1 bg-[#150e27] hover:bg-purple-900 text-white text-sm rounded-lg transition-color ease-in-out duration-300 shadow'}
+                className={'flex flex-row items-center justify-center w-full lg:w-auto px-6 py-1 bg-[#150e27] hover:bg-purple-900 text-white text-sm rounded-lg transition-color ease-in-out duration-300 shadow'}
             >
                 Apply Now
             </button>
 
             <button
-                className={'flex flex-row items-center justify-center w-full lg:w-auto px-8 py-1 bg-[#150e27] hover:bg-purple-900 text-white text-sm rounded-lg transition-color ease-in-out duration-300 shadow'}
+                className={'flex flex-row items-center justify-center w-full lg:w-auto px-6 py-1 bg-[#150e27] hover:bg-purple-900 text-white text-sm rounded-lg transition-color ease-in-out duration-300 shadow'}
             >
                 Share
 

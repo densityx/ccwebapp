@@ -1,13 +1,15 @@
 import ShareComponents from "./ShareComponents";
+import {format} from "../../services/currency";
+import moment from "moment";
 
-export default function JobDetails() {
+export default function JobDetails({job, index}) {
     return (
         <div className={'relative bg-[#f5f5f5] overflow-hidden rounded-xl'}>
-            <div className={'h-[260px] lg:h-[320px] overflow-hidden'}>
+            <div className={'flex items-center h-[260px] lg:h-[320px] overflow-hidden'}>
                 <img
-                    className={'relative z-0 w-full h-auto'}
-                    src="/images/cover.jpg"
-                    alt=""
+                    className={'w-full h-auto'}
+                    src={`https://picsum.photos/id/${index}/1000/600`}
+                    alt={job.name + ' poster'}
                 />
             </div>
 
@@ -17,11 +19,11 @@ export default function JobDetails() {
                 <div className={'flex justify-between'}>
                     <div>
                         <h1 className={'text-2xl lg:text-4xl text-white'}>
-                            Creative Intern
+                            {job.name}
                         </h1>
 
                         <p className={'mt-2 text-sm lg:text-base text-white'}>
-                            Job Posted by <a href={'#'} className={'underline'}>Anaabu studio</a>
+                            Job Posted by <a href={'#'} className={'underline'}>{job.company}</a>
                         </p>
                     </div>
 
@@ -39,11 +41,11 @@ export default function JobDetails() {
                 <div className={`flex flex-col lg:flex-row justify-between lg:items-end`}>
                     <div>
                         <p className={'text-base lg:text-lg text-white'}>
-                            9 Hours ago | 32 Applicants
+                            {moment(job.postedAt.toDate()).startOf('hour').fromNow()} | {job.applicants} Applicants
                         </p>
 
                         <p className={'mt-2 text-white text-sm font-medium'}>
-                            Kuala Lumpur, Malaysia
+                            {job.location}
                         </p>
                     </div>
 
@@ -59,7 +61,7 @@ export default function JobDetails() {
                         </h3>
 
                         <p className={'inline-flex mt-2 text-sm font-medium px-3 py-1 rounded bg-[#ff6e00]'}>
-                            Full Time
+                            {job.type}
                         </p>
                     </div>
 
@@ -69,7 +71,11 @@ export default function JobDetails() {
                         </h3>
 
                         <p className={'inline-flex mt-2 text-sm font-medium'}>
-                            RM 500.00 - RM 1,200.00
+                            {
+                                job.minSalary === job.maxSalary
+                                    ? `${job.currency} ${format(job.minSalary)}`
+                                    : `${job.currency} ${format(job.minSalary)} - ${job.currency} ${format(job.minSalary)}`
+                            }
                         </p>
                     </div>
 
@@ -79,7 +85,7 @@ export default function JobDetails() {
                         </h3>
 
                         <p className={'inline-flex mt-2 text-sm font-medium px-3 py-1 rounded bg-[#ffb200]'}>
-                            Diploma
+                            {job.education}
                         </p>
                     </div>
 
@@ -89,7 +95,7 @@ export default function JobDetails() {
                         </h3>
 
                         <p className={'inline-flex mt-2 text-sm font-medium'}>
-                            Monday - Friday
+                            {job.workingDays}
                         </p>
                     </div>
 
@@ -99,7 +105,7 @@ export default function JobDetails() {
                         </h3>
 
                         <p className={'inline-flex mt-2 text-sm font-medium px-3 py-1 rounded bg-[#b0dffd]'}>
-                            Intermediate/Junior (1 - 2 Years of Experience)
+                            {job.experience}
                         </p>
                     </div>
                 </div>
@@ -111,7 +117,7 @@ export default function JobDetails() {
                         </h3>
 
                         <p className={'mt-2 text-sm'}>
-                            Anaabu is looking for a Creative Intern to assist us in the development
+                            {job.company} is looking for a Creative Intern to assist us in the development
                             of
                             our campaigns
                         </p>
@@ -154,10 +160,10 @@ export default function JobDetails() {
                         </h3>
 
                         <p className={'mt-2 text-sm'}>
-                            ANAABU is an independent apparel label that infuses soft androgyny into
+                            {job.company} is an independent apparel label that infuses soft androgyny into
                             every inch of its creation. Designed intimately witih minimal adornment
                             and
-                            muted colours, ANAABU reflects clean silhouttes for perfect essentials
+                            muted colours, {job.company} reflects clean silhouttes for perfect essentials
                             of
                             capsule wardrobe.
                         </p>
