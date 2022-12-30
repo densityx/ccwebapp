@@ -14,7 +14,7 @@ export default function Home() {
     const appStore = useAppStore();
 
     /** Retrieve all jobs from firestore */
-    const retrieveJobs = useCallback(async (term = null) => {
+    const retrieveJobs = useCallback(async () => {
         const db = getFirestore(app)
         const data = [];
 
